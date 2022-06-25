@@ -3,10 +3,13 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+
+import {getFirestore,query,getDocs,collection, where,addDoc,} from "firebase/firestore";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, provider } from "../../firebase";
+import { auth, provider, db } from "../../firebase";
 import "./index.css";
+
 
 function Index() {
   const history = useHistory();
@@ -24,24 +27,46 @@ function Index() {
     } else return true;
   }
 
-  const handleGoogleSignIN = () => {
-    setLoading(true);
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        setLoading(false);
-        // console.log(res);
-        history.push("/");
-        // return (
-        //   <>
+const handleGoogleSignIN = async () => {
 
-        //   </>
-        // );
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error);
+  try {
+    const res = await signInWithPopup(auth, provider);
+    const user = res.user;
+    const q = query(collection(db, "users"), where("uid", "==", user.uid));
+    const docs = await getDocs(q);
+    if (docs.docs.length === 0) {
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        name: user.displayName,
+        authProvider: "google",
+        email: user.email,
       });
-  };
+    }
+    history.push("/userDetails");
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+  // const handleGoogleSignIN = () => {
+  //   setLoading(true);
+  //   signInWithPopup(auth, provider)
+  //     .then((res) => {
+  //       setLoading(false);
+  //       // console.log(res);
+  //       history.push("/");
+  //       // return (
+  //       //   <>
+
+  //       //   </>
+  //       // );
+  //     })
+  //     .catch((error) => {
+  //       setLoading(false);
+  //       console.log(error);
+  //     });
+  // };
 
   const handleSignIn = () => {
     setError();
@@ -93,7 +118,7 @@ function Index() {
   return (
     <div className="auth">
       <div className="auth-container">
-        <p>Add another way to log in using any of the following services. </p>
+        <p>Welcome to AskQ - A digital learning community</p>
         <div className="sign-options">
           <div onClick={handleGoogleSignIN} className="single-option">
             <img

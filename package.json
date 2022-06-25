@@ -12,21 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akkySrivastava/ask-us.git"
+    "url": "git+https://github.com/askus/ask-us.git"
   },
-  "author": "Code with akky",
+  "author": "askus",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akkySrivastava/ask-us/issues"
+    "url": "https://github.com/askus/ask-us/issues"
   },
-  "homepage": "https://github.com/akkySrivastava/ask-us#readme",
+  "homepage": "https://github.com/askus/ask-us#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^6.0.2",
-    "nodemon": "^2.0.12"
+    "mongoose": "^6.0.2"
   }
 }

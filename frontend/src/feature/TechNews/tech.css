@@ -1,0 +1,74 @@
+
+.stories2-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.card2 {
+  min-width: 20rem;
+  width: 40vw;
+  padding: 4rem;
+  background-color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0.5rem;
+  color: #15133c;
+}
+
+.card2-button {
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card2-button a {
+  color: #92b4ec;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.card2-button a:last-child {
+  color: red;
+}
+
+
+
+.pagination2-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button2 {
+  padding: 0.8rem 2.2rem;
+  border: none;
+  font-size: 1.6rem;
+  background-color: #15133c;
+  color: #ffffff;
+  margin: 3rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* responsive layout  */
+
+@media (max-width: 998px) {
+
+  .card2 {
+    min-width: 45rem;
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .card2 {
+    min-width: 35rem;
+    padding: 2rem;
+  }
+}

@@ -43,15 +43,15 @@ function Sidebar() {
             </div>
           </div>
           <div className="sidebar-option">
-            <p>FIND A JOB</p>
+            <p>World Technology</p>
             <div className="link">
               <Link
                 style={{
                   margin: "10px 20px",
                 }}
-                to="/"
+                to="/tech"
               >
-                Jobs
+                Cyber Security
               </Link>
               {/* <a
                 style={{
@@ -71,11 +71,43 @@ function Sidebar() {
               </a> */}
               <Link
                 style={{
-                  marginLeft: "20px",
+                  margin: "10px 20px",
+                }}
+                to="/tech"
+              >
+                Edge Computing
+              </Link>
+              <Link
+                style={{
+                  margin: "10px 20px",
                 }}
                 to="/"
               >
-                Companies
+                Machine Learning
+              </Link>
+              <Link
+                style={{
+                  margin: "10px 20px",
+                }}
+                to="/"
+              >
+                Artificial Intelligence
+              </Link>
+              <Link
+                style={{
+                  margin: "10px 20px",
+                }}
+                to="/"
+              >
+                Predictive Analytics
+              </Link>
+              <Link
+                style={{
+                  margin: "10px 20px",
+                }}
+                to="/"
+              >
+                Software Development
               </Link>
             </div>
           </div>
@@ -83,7 +115,7 @@ function Sidebar() {
             <p>TEAMS</p>
             <div className="link-tag">
               <WorkIcon />
-              <Link to="/">Companies</Link>
+              <Link to="/">Community</Link>
               {/* <a href="/">Companies</a> */}
             </div>
           </div>

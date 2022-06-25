@@ -46,16 +46,13 @@ function Header() {
       <div className="header-container">
         <div className="header-left">
           <Link to="/">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Stack_Overflow_logo.svg/220px-Stack_Overflow_logo.svg.png"
-              alt="logo"
-            />
+            <h1>AskUs</h1>
           </Link>
           {/* <a href="/">
             
           </a> */}
 
-          <h3>Products</h3>
+          <h3>Community</h3>
         </div>
         <div className="header-middle">
           <div className="header-search-container">
